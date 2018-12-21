@@ -6,15 +6,18 @@
       <section>
           <button v-on:click="resolve">resolve</button>
       </section>
+
       <section>
          <Echo :message='test_msg'></Echo>
       </section>
+
       <div v-bind:id="dynamicId">rewrw</div>  //v-bind 绑定模板属性
+
       <p v-if="seen">现在你看到我了</p>
+
       <section style="color: green">
            计算属性赋值1：{{ math_message }}
-         <p style="color: red"> 计算属性赋值2：{{ math_test_message }}</p>
-
+          <p style="color: red"> 计算属性赋值2：{{ math_test_message }}</p>
           <input style="color:pink" v-model="question">
       </section>
    </div>

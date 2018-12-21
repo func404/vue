@@ -1,6 +1,8 @@
 <template>
   <div>
      模板输出显示：{{ message }}
+     <br>
+     {{ local }}
   </div>
 </template>
 
@@ -12,8 +14,13 @@
      ],
      data() {
        return {
-          message:message.txt
+
        }
      },
+     computed:{
+       local:function () {
+         return 0+ this.message
+       }
+     }
    }
 </script>
