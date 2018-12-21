@@ -20,6 +20,19 @@
           <p style="color: red"> 计算属性赋值2：{{ math_test_message }}</p>
           <input style="color:pink" v-model="question">
       </section>
+
+      <section>
+          <p :class='classObject'>
+             测试类属性
+          </p>
+          <p :class='[{active:isActive},errorClass]'>
+             测试类属性数组语法
+          </p>
+      </section>
+      <section>
+         绑定style样式
+
+      </section>
    </div>
   </template>
 
@@ -34,7 +47,8 @@
           dynamicId:false,
           seen:false,
           test_msg:'fuck!!!',
-          question:''
+          question:'',
+          isActive:true,
         }
       },
       components:{ //引入模板
@@ -58,6 +72,15 @@
             set : function () {
                 return '我是爸爸';
             }
+         },
+         classObject :function () {
+            return {
+              active:true,
+              testsss:true
+            }
+         },
+         errorClass :function () {
+           return false;
          }
       },
       watch:{ //侦听属性  //监听事件
